@@ -16,7 +16,7 @@ function NewPost() {
   return (
     <div className="newPost">
       <div className="newPost__top">
-        <Avatar />
+        <Avatar className="newPost__avatar" />
         <form>
           <input
             type="text"
@@ -29,8 +29,7 @@ function NewPost() {
           />
           <input
             placeholder="image URl ( Optional )"
-            type=""
-            text
+            type="text"
             value={imgurl}
             onChange={(e) => {
               setImgUrl(e.target.value);

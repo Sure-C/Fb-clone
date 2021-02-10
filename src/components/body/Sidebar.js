@@ -10,14 +10,14 @@ import {
 } from "@material-ui/icons";
 import SideBarRow from "./SideBarRow";
 import NewPost from "./NewPost";
+import { useStateValue } from "../../middleware/StateProvider";
 
 function Sidebar() {
+  const [user] = useStateValue();
+
   return (
     <div className="sidebar">
-      <SideBarRow
-        src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fin.pinterest.com%2Fpin%2F684828687063188925%2F&psig=AOvVaw2kG8Dyl70wlfAw3rDOK6C5&ust=1612956337795000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPDVnt_Y3O4CFQAAAAAdAAAAABAD"
-        title="Sure C"
-      />
+      <SideBarRow src={user.photoURL} title={user.displayName} />
 
       <SideBarRow Icon={EmojiFlags} title="Pages" />
 
